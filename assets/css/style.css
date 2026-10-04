@@ -463,3 +463,29 @@ td.code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size
 /* ---------- Small refinements ---------- */
 .section-dark .trial-day p { color: rgba(255,255,255,.72); }
 .calc-row label:first-child { flex: 2 1 220px; }
+
+/* ---------- Market comparison ---------- */
+.cmp-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 28px; }
+.cmp-charts > * { min-width: 0; }
+.cmp-charts .bar { background: var(--cream-2); }
+.cmp-charts .bar-row .lbl { font-size: .9rem; }
+.cmp-charts .bar-row.us .lbl { color: var(--green-700); font-weight: 800; }
+.cmp-charts .bar-row:not(.us) .bar i { background: #b9b2a1; }
+.cmp-charts .bar-row:not(.us) .pct { color: var(--muted); }
+.cmp-charts .coverage { margin-bottom: 14px; }
+.cmp-tables { display: grid; gap: 22px; }
+.cmp-table th, .cmp-table td { padding: 12px 14px; text-align: right; font-variant-numeric: tabular-nums; }
+.cmp-table thead th:first-child, .cmp-table tbody th { text-align: left; }
+.cmp-table tbody th {
+  position: sticky; left: 0; z-index: 1; background: #fff; font-weight: 700; font-size: .92rem;
+  text-transform: none; letter-spacing: 0; color: var(--ink); box-shadow: 1px 0 0 var(--line);
+}
+.cmp-table thead th:first-child { position: sticky; left: 0; z-index: 2; }
+.cmp-table td:nth-last-child(-n+2) { text-align: left; white-space: normal; min-width: 120px; font-size: .88rem; }
+.cmp-table tr.us td, .cmp-table tr.us th { background: #fdf1e1; color: var(--brown); font-weight: 800; }
+.cmp-table tr.us th { color: var(--orange-dark); }
+.cmp-table .zero { color: #b5ae9e; }
+.cmp-table abbr { text-decoration: none; color: #9c9584; font-size: .85rem; cursor: help; }
+.check-list.neutral li::before { background-color: #a49c89; background-image: none; width: 10px; height: 10px; top: 8px; left: 6px; }
+.cmp-source { margin-top: 28px; padding: 16px 20px; border: 1px dashed var(--line); border-radius: var(--radius); }
+@media (max-width: 900px) { .cmp-charts { grid-template-columns: 1fr; } }
